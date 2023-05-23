@@ -8,9 +8,10 @@
   <%= @user.name %>
   
   <h5>introduction</h5>
+  <%= @user.introduction %>
+    
   <%= link_to"btn",edit_user_path(current_user.id) %>
 
- 
       
   <%= form_for(@book,  url: books_path) do |f| %>
 
