@@ -6,9 +6,11 @@
   <%= @user.name %>
 
   <h5>introduction</h5>
-   <%= @user.introduction %>
-  <%= link_to"btn",edit_user_path(current_user.id) %>
 
+   <%= @user.introduction %>
+    <br>
+  <%= link_to"btn",edit_user_path(current_user.id) %>
+    </br>
 
 
 <%= form_with model: @book_new, url: books_path, method: :post do |f| %>
@@ -19,7 +21,7 @@
         <%= f.text_field :title %>
 
         <h4>Opinion</h4>
-        <%= f.text_area :opinion %>
+        <%= f.text_area :body %>
         <nav>
 
         <%= f.submit 'Create Book' %>
@@ -40,14 +42,23 @@
   </thead>
 <td>
         <%= link_to user_path(@book.user_id) do %>
-         <%= image_tag @book.user.get_profile_image(100,100) %><br>
+         <%= image_tag @book.user.get_profile_image(100,100) %>
          <%= @book.user.name %>
         <% end %>
+
+
   </td>
   <td>
      <%= link_to book_path(@book.id) do %>
        <%= @book.title %>
+       <%= @book.body %>
      <% end %>
+  </td>
+  <td>
+    <%= link_to "Edit", edit_book_path(@book) %>
+  </td>
+  <td>
+    <%= link_to "Destroy", book_path(@book.id),method: :delete,"data-confirm" => "AreYouSure？"  %>
   </td>
 
   </div>

@@ -9,11 +9,11 @@
   
   <h5>introduction</h5>
   <%= @user.introduction %>
-    
+    <br>
   <%= link_to"btn",edit_user_path(current_user.id) %>
-
+    </br>
       
-  <%= form_for(@book,  url: books_path) do |f| %>
+ <%= form_with model: @book_new, url: books_path, method: :post do |f| %>
 
 
         <h2>New book</h2>
@@ -21,7 +21,7 @@
         <%= f.text_field :title %>
 
         <h4>Opinion</h4>
-        <%= f.text_area :opinion %>
+        <%= f.text_area :body %>
         <nav>
 
         <%= f.submit 'Create Book' %>
@@ -45,7 +45,7 @@
 
     <% @users.each do |user| %>
    <tr>
- 
+   <th> <%= image_tag @user.get_profile_image(100,100) %></th>
    <th><%= user.name %><th>
    <th><%= link_to"Show",user_path(user.id) %></th>
    </tr>
