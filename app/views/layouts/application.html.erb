@@ -20,7 +20,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class='navbar-brand ' >
+      <a class='navbar-brand'>
         <span>Bookers</span>
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,17 +32,17 @@
           <% if user_signed_in? %>
           <ul class="navbar-nav">
             
-           <li><%= link_to "Home", user_path(current_user.id) %></li>
-            <li><%= link_to "Users", "/users" %></li>
-            <li><%= link_to "Books", "/books" %></li>
-            <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+           <li><i class="fas fa-home"></i><%= link_to "Home", user_path(current_user.id),style: "color: white;" %></li>
+            <li><i class="fas fa-users"></i><%= link_to "Users", "/users",style: "color: white;" %></li>
+            <li><i class="fas fa-book-open"></i><%= link_to "Books", "/books",style: "color: white;" %></li>
+            <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout", destroy_user_session_path, method: :delete,style: "color: white;" %></li>
 　　　　　　 </li>　
           <% else %>
            
-            <li><%= link_to"Home",root_path %></li>
-            <li><%= link_to"About","/home/about" %></li>
-            <li><%= link_to"Sign up", "/users/sign_up" %></li>
-            <li><%= link_to"login", "/users/sign_in" %></li>
+            <li><i class="fas fa-home"></i><%= link_to"Home",root_path,style: "color: white;" %></li>
+            <li><i class="fas fa-link"></i><%= link_to"About","/home/about",style: "color: white;" %></li>
+            <li><i class="fas fa-user-plus"></i><%= link_to"Sign up", "/users/sign_up",style: "color: white;" %></li>
+            <li><i class="fas fa-sign-in-alt"></i><%= link_to"Login", "/users/sign_in",style: "color: white;" %></li>
             </li>
           <% end %>
         </ul>
