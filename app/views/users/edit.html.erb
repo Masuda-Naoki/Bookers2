@@ -7,23 +7,28 @@
         </ul>
 <% end %>
 
-
-<div class="container-md my-box">
-<div class="row justify-content-center">
-
+<p id="notice"></p>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h2>Userinfo</h2>
 <%= form_with model: @user do |f| %>
-    <h2>Userinfo</h2>
-    <h4>Name</h4>
-    <%= f.text_field :name %>
-    <h4>Image</h4>
-  <%= f.file_field :profile_image, accept: "image/*" %>
-    <h4>introduction</h4>
-  <%= f.text_area :introduction %>
-    <br>
-    <%= f.submit 'Update User' %>
-    </br>
+    <div class="form-group">
+    <label>Name</label>
+   <br> <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+    <label>Image</label>
+  <br><%= f.file_field :profile_image, accept: "image/*" %>
+  </div>
+   <div class="form-group">
+    <label>introduction</label>
+  <br><%= f.text_area :introduction %>
+  </div>
+    <%= f.submit 'Update User' ,class:"btn btn-secondary col-xs-10 col-xs-offset-1" %>
+    
 <% end %>
-
+</div>
 </div>
 </div>
 
